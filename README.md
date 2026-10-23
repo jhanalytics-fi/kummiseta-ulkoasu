@@ -55,6 +55,16 @@ Leikkauspisteet: 1320 px (yläpalkin kolmas USP piiloon), 1100 px (tabletti),
 - **Kuntoluokitus**: viisi palleroa, täytettyjen määrä = kuntoluokka K1-K5.
 - **Painikkeet** `.btn`: `.primary` (pääväri tai hero-näkymässä keltainen),
   `.secondary` (valkoinen pohja, pääväri teksti), `.ghost` (reunaviiva).
+- **Suodatinpalkki** `.applied`: listauksen yläpuolella näkyvä palkki, joka
+  kertoo käytössä olevat suodattimet ja hakusanan. Jokainen suodatin on oma
+  poistettava merkki, lisäksi "Poista kaikki suodattimet". Näkyy aina kun
+  vähintään yksi suodatin on päällä.
+- **Suodattimet** `.filters`: jokaisen vaihtoehdon perässä tuotemäärä.
+  Pitkä lista (alakategoriat) näyttää kuusi ensimmäistä, loput
+  `.more-item`-luokalla piilossa ja "Näytä kaikki" -linkin takana; listan
+  alussa hakukenttä `.facet-search`. Hinta ja painovuosi: liukusäädin `.slider`
+  (staattinen malli, toteutus esim. kahdella `input type=range`) ja sen alla
+  numerokentät, jotka toimivat myös ilman säädintä.
 - **Pudotusvalikko** `.toolbar select`: selaimen oma nuoli korvattu
   CSS-taustakuvalla, toimii ilman JavaScriptiä.
 

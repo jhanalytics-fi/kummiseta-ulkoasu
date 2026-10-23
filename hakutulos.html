@@ -145,14 +145,28 @@
         <div class="listing">
           <aside class="filters">
             <div class="active"><span>rämö ×</span><a href="#">Tyhjennä</a></div>
-            <fieldset>
-              <legend>Alakategoria</legend>
+            <fieldset class="cats-f">
+              <legend>Alakategoria <span class="legend-n">(16)</span></legend>
+              <div class="facet-search">
+                <input placeholder="Etsi alakategoriaa…" aria-label="Etsi alakategoriaa" />
+              </div>
               <label><input type="checkbox" /> Kotimainen<small>520</small></label
               ><label><input type="checkbox" /> Käännöskirjallisuus<small>410</small></label
               ><label><input type="checkbox" /> Dekkarit<small>160</small></label
+              ><label><input type="checkbox" /> Klassikot<small>95</small></label
               ><label><input type="checkbox" /> Novellit<small>70</small></label
               ><label><input type="checkbox" /> Runot<small>50</small></label
-              ><label><input type="checkbox" /> Draama<small>30</small></label>
+              ><label class="more-item"><input type="checkbox" /> Nuortenkirjat<small>44</small></label
+              ><label class="more-item"><input type="checkbox" /> Satukirjat<small>38</small></label
+              ><label class="more-item"><input type="checkbox" /> Draama<small>30</small></label
+              ><label class="more-item"><input type="checkbox" /> Esseet<small>28</small></label
+              ><label class="more-item"><input type="checkbox" /> Sotakirjat<small>26</small></label
+              ><label class="more-item"><input type="checkbox" /> Huumori<small>22</small></label
+              ><label class="more-item"><input type="checkbox" /> Antologiat<small>19</small></label
+              ><label class="more-item"><input type="checkbox" /> Sarjakuvaromaanit<small>17</small></label
+              ><label class="more-item"><input type="checkbox" /> Kirjeet ja päiväkirjat<small>14</small></label
+              ><label class="more-item"><input type="checkbox" /> Erotiikka<small>12</small></label
+              ><a href="#" class="more-link">Näytä kaikki 16 alakategoriaa</a>
             </fieldset>
             <fieldset>
               <legend>Kunto</legend>
@@ -184,8 +198,28 @@
             </fieldset>
             <fieldset>
               <legend>Hinta</legend>
+              <div class="slider" aria-hidden="true">
+                <div class="track"></div>
+                <div class="fill" style="left: 0; right: 50%"></div>
+                <div class="knob" style="left: 0"></div>
+                <div class="knob" style="left: 50%"></div>
+              </div>
               <div class="range">
-                <input placeholder="0" aria-label="Alin hinta" /> – <input placeholder="50" aria-label="Ylin hinta" /> €
+                <input value="0" aria-label="Alin hinta" /> – <input value="50" aria-label="Ylin hinta" />
+                <span class="unit">€</span>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Painovuosi</legend>
+              <div class="slider" aria-hidden="true">
+                <div class="track"></div>
+                <div class="fill" style="left: 28%; right: 12%"></div>
+                <div class="knob" style="left: 28%"></div>
+                <div class="knob" style="left: 88%"></div>
+              </div>
+              <div class="range">
+                <input value="1950" aria-label="Painovuosi alkaen" /> –
+                <input value="2015" aria-label="Painovuosi asti" />
               </div>
             </fieldset>
             <fieldset>
@@ -196,6 +230,13 @@
             </fieldset>
           </aside>
           <div>
+            <div class="applied">
+              <span class="lbl">Haku:</span
+              ><a href="#" class="chip"><b>Hakusana:</b> rämö <span class="x" aria-label="Poista">×</span></a
+              ><a href="#" class="chip"
+                ><b>Kunto:</b> Erinomainen tai parempi <span class="x" aria-label="Poista">×</span></a
+              ><a href="#" class="clear">Poista kaikki suodattimet</a>
+            </div>
             <div class="toolbar">
               <span>Näytetään 1–12 / 3</span
               ><label
