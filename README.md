@@ -7,8 +7,8 @@ Suunnittelu JH Analytics, 10/2026.
 
 | Tiedosto | Sisältö |
 |---|---|
-| `etusivu.html` | Etusivu: yläpalkki, header, navigaatio, kampanjahero, nostot, liike-esittely, footer |
-| `tuotesivu.html` | Yksittäisen kirjan sivu: kuvat, ostolaatikko, kunto ja huomiot, tiedot, kuvaus |
+| `etusivu.html` | Etusivu: yläpalkki, header, navigaatio, kampanjahero, uusimmat, Kummisetä suosittelee, liike-esittely, footer |
+| `tuotesivu.html` | Yksittäisen kirjan sivu: kuvat, ostolaatikko, kunto ja huomiot, muut kappaleet, tiedot, kuvaus, samasta hyllystä |
 | `tuotelistaus.html` | Kategoriasivu: sivupalkin suodattimet, järjestys, tuoteruudukko, sivutus |
 | `hakutulos.html` | Hakutulossivu: sama rakenne kuin listaus + hakuvinkki |
 | `tyyliopas.html` | Värit, typografia, painikkeet, kuntomerkinnät ja logo yhdellä sivulla |
@@ -65,6 +65,20 @@ Leikkauspisteet: 1320 px (yläpalkin kolmas USP piiloon), 1100 px (tabletti),
   alussa hakukenttä `.facet-search`. Hinta ja painovuosi: liukusäädin `.slider`
   (staattinen malli, toteutus esim. kahdella `input type=range`) ja sen alla
   numerokentät, jotka toimivat myös ilman säädintä.
+- **Muut kappaleet** `.copies` (tuotesivu): taulukko saman teoksen muista
+  kappaleista, avaimena ISBN. Sarakkeet: kansi, painos ja vuosi, sidosasu,
+  kunto, huomiot, hinta ja Katso-painike. Halvin ensin, katsottava kappale
+  `tr.this`-luokalla korostettuna. Mobiilissa rivit muuttuvat korteiksi.
+  Ostolaatikon "3 kappaletta · vertaa" -linkki vie ankkuriin `#kappaleet`.
+- **Kummisetä suosittelee** `.picks` / `.pick` (etusivu, hakusivu kun osumia
+  on alle neljä): käsin valitut nostot, kansi, tekijä, nimi, kauppiaan saate
+  `.say` ja hinta. Suositukset tulevat Ecwidin omasta kategoriasta, jota
+  kauppias ylläpitää.
+- **Samasta hyllystä** `.reco` (tuotesivu): automaattinen nosto samasta
+  alakategoriasta, tavallinen korttiruudukko.
+- **Kappalemerkintä kortissa** `.copies-n`: listauksessa ja haussa yksi kortti
+  per teos, merkintä "4 kappaletta · 7–24 €"; kortti vie halvimman kappaleen
+  sivulle, jossa kappaletaulukko on.
 - **Pudotusvalikko** `.toolbar select`: selaimen oma nuoli korvattu
   CSS-taustakuvalla, toimii ilman JavaScriptiä.
 

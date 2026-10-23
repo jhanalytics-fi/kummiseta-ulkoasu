@@ -1,394 +1,67 @@
 <!doctype html>
 <html lang="fi">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Hakutulos - Kummisetä</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,600&family=Source+Sans+3:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/kummiseta.css" />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="favicon.ico" sizes="32x32" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <meta name="theme-color" content="#6b2318" />
-  </head>
-  <body>
-    <div class="utility">
-      <div class="wrap">
-        <div class="usp">
-          <span
-            ><svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M2 6h11v10H2zM13 10h4l3 3v3h-7"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linejoin="round"
-              />
-              <circle cx="6" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8" />
-              <circle cx="17" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8" />
-            </svg>
-            <b>Ilmainen toimitus</b>&nbsp;yli 75 € tilauksiin</span
-          ><span
-            ><svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M4 10v10h16V10M3 5h18l-1 5H4z"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linejoin="round"
-              />
-              <path d="M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" />
-            </svg>
-            Nouto liikkeestä, Uudenmaankatu 26</span
-          ><span>★ 4,8/5 · 293 asiakaspalautetta</span>
-        </div>
-        <div class="links">
-          <a href="#"
-            ><svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 5h16v14H4z" fill="none" stroke="currentColor" stroke-width="1.8" />
-              <path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" /></svg
-            >Yhteystiedot</a
-          ><a href="#">Ota yhteyttä</a><a href="#" class="sell-link">Tarjoa kirjoja myytäväksi</a>
-        </div>
-      </div>
-    </div>
-    <header class="site">
-      <div class="wrap hbar">
-        <a href="etusivu.html" class="logo" aria-label="Kummisetä etusivu"
-          ><img
-            src="logo/kummiseta-logo-musta.svg"
-            alt="Kummisetä - Divari &amp; Antikvariaatti"
-            width="230"
-            height="64"
-        /></a>
-        <form class="search" role="search" onsubmit="return false;">
-          <input placeholder="Hae kirjailijaa, teosta tai ISBN:ää" aria-label="Haku" /><button aria-label="Hae">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
-              <path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </button>
-        </form>
-        <div class="hicons">
-          <a href="#"
-            ><svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M12 20s-7-4.4-8.6-9C2.3 7.6 4.6 5 7.5 5c1.9 0 3.4 1 4.5 2.6C13.1 6 14.6 5 16.5 5c2.9 0 5.2 2.6 4.1 6-1.6 4.6-8.6 9-8.6 9z"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linejoin="round"
-              /></svg
-            ><small>Suosikit</small></a
-          ><a href="#"
-            ><svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2" />
-              <path
-                d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-              /></svg
-            ><small>Tili</small></a
-          ><a href="#"
-            ><svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M3 4h2l2.2 11h11l2-8H6.3"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linejoin="round"
-              />
-              <circle cx="9" cy="19.5" r="1.5" fill="currentColor" />
-              <circle cx="17" cy="19.5" r="1.5" fill="currentColor" /></svg
-            ><small>Kori</small><span class="badge-n">2</span></a
-          ><a href="#" class="menu-btn" aria-label="Valikko"
-            ><svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg
-          ></a>
-        </div>
-      </div>
-    </header>
-    <nav class="nav">
-      <div class="wrap">
-        <a href="tuotelistaus.html" class="on">Kaunokirjallisuus</a><a href="tuotelistaus.html">Scifi &amp; fantasia</a
-        ><a href="tuotelistaus.html">Historia</a><a href="tuotelistaus.html">Filosofia</a
-        ><a href="tuotelistaus.html">Psykologia</a><a href="tuotelistaus.html" class="all">Kaikki kategoriat</a
-        ><a href="#" class="news"
-          ><svg viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px">
-            <path d="M3 6h18v12H3z" fill="none" stroke="currentColor" stroke-width="1.8" />
-            <path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.8" /></svg
-          >Tilaa uutiskirje</a
-        >
-      </div>
-    </nav>
-    <main>
-      <div class="wrap">
-        <div class="crumbs"><a href="etusivu.html">Etusivu</a> / Haku</div>
-        <div class="lhead">
-          <div>
-            <h1>Hakutulokset: <em style="font-style: italic; color: var(--brand)">rämö</em></h1>
-            <p>3 nimikettä</p>
-          </div>
-          <button class="btn ghost sm filter-btn">Suodata (2)</button>
-        </div>
-        <div class="searchtip">
-          Haku kohdistuu tekijään, teoksen nimeen ja ISBN:ään. Kokeile myös <a href="#">Rämö Satu</a> tai selaa
-          <a href="tuotelistaus.html">Kaunokirjallisuus</a>.
-        </div>
-        <div class="listing">
-          <aside class="filters">
-            <div class="active"><span>rämö ×</span><a href="#">Tyhjennä</a></div>
-            <fieldset class="cats-f">
-              <legend>Alakategoria <span class="legend-n">(16)</span></legend>
-              <div class="facet-search">
-                <input placeholder="Etsi alakategoriaa…" aria-label="Etsi alakategoriaa" />
-              </div>
-              <label><input type="checkbox" /> Kotimainen<small>520</small></label
-              ><label><input type="checkbox" /> Käännöskirjallisuus<small>410</small></label
-              ><label><input type="checkbox" /> Dekkarit<small>160</small></label
-              ><label><input type="checkbox" /> Klassikot<small>95</small></label
-              ><label><input type="checkbox" /> Novellit<small>70</small></label
-              ><label><input type="checkbox" /> Runot<small>50</small></label
-              ><label class="more-item"><input type="checkbox" /> Nuortenkirjat<small>44</small></label
-              ><label class="more-item"><input type="checkbox" /> Satukirjat<small>38</small></label
-              ><label class="more-item"><input type="checkbox" /> Draama<small>30</small></label
-              ><label class="more-item"><input type="checkbox" /> Esseet<small>28</small></label
-              ><label class="more-item"><input type="checkbox" /> Sotakirjat<small>26</small></label
-              ><label class="more-item"><input type="checkbox" /> Huumori<small>22</small></label
-              ><label class="more-item"><input type="checkbox" /> Antologiat<small>19</small></label
-              ><label class="more-item"><input type="checkbox" /> Sarjakuvaromaanit<small>17</small></label
-              ><label class="more-item"><input type="checkbox" /> Kirjeet ja päiväkirjat<small>14</small></label
-              ><label class="more-item"><input type="checkbox" /> Erotiikka<small>12</small></label
-              ><a href="#" class="more-link">Näytä kaikki 16 alakategoriaa</a>
-            </fieldset>
-            <fieldset>
-              <legend>Kunto</legend>
-              <label
-                ><input type="checkbox" checked />
-                <span class="pips" title="Uudenveroinen (K5-)"
-                  ><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i
-                ></span>
-                Uudenveroinen<small>120</small></label
-              ><label
-                ><input type="checkbox" checked />
-                <span class="pips" title="Erinomainen (K4)"
-                  ><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i
-                ></span>
-                Erinomainen<small>680</small></label
-              ><label
-                ><input type="checkbox" />
-                <span class="pips" title="Hyvä (K3)"
-                  ><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i
-                ></span>
-                Hyvä<small>400</small></label
-              >
-            </fieldset>
-            <fieldset>
-              <legend>Sidosasu</legend>
-              <label><input type="checkbox" /> Sidottu<small>590</small></label
-              ><label><input type="checkbox" /> Nidottu<small>310</small></label
-              ><label><input type="checkbox" checked /> Pokkari<small>340</small></label>
-            </fieldset>
-            <fieldset>
-              <legend>Hinta</legend>
-              <div class="slider" aria-hidden="true">
-                <div class="track"></div>
-                <div class="fill" style="left: 0; right: 50%"></div>
-                <div class="knob" style="left: 0"></div>
-                <div class="knob" style="left: 50%"></div>
-              </div>
-              <div class="range">
-                <input value="0" aria-label="Alin hinta" /> – <input value="50" aria-label="Ylin hinta" />
-                <span class="unit">€</span>
-              </div>
-            </fieldset>
-            <fieldset>
-              <legend>Painovuosi</legend>
-              <div class="slider" aria-hidden="true">
-                <div class="track"></div>
-                <div class="fill" style="left: 28%; right: 12%"></div>
-                <div class="knob" style="left: 28%"></div>
-                <div class="knob" style="left: 88%"></div>
-              </div>
-              <div class="range">
-                <input value="1950" aria-label="Painovuosi alkaen" /> –
-                <input value="2015" aria-label="Painovuosi asti" />
-              </div>
-            </fieldset>
-            <fieldset>
-              <legend>Kieli</legend>
-              <label><input type="checkbox" /> suomi<small>1100</small></label
-              ><label><input type="checkbox" /> ruotsi<small>60</small></label
-              ><label><input type="checkbox" /> englanti<small>80</small></label>
-            </fieldset>
-          </aside>
-          <div>
-            <div class="applied">
-              <span class="lbl">Haku:</span
-              ><a href="#" class="chip"><b>Hakusana:</b> rämö <span class="x" aria-label="Poista">×</span></a
-              ><a href="#" class="chip"
-                ><b>Kunto:</b> Erinomainen tai parempi <span class="x" aria-label="Poista">×</span></a
-              ><a href="#" class="clear">Poista kaikki suodattimet</a>
-            </div>
-            <div class="toolbar">
-              <span>Näytetään 1–12 / 3</span
-              ><label
-                >Järjestä
-                <select>
-                  <option>Uusimmat ensin</option>
-                  <option>Hinta: halvin ensin</option>
-                  <option>Hinta: kallein ensin</option>
-                  <option>Tekijän mukaan</option>
-                  <option>Painovuosi</option>
-                </select></label
-              >
-            </div>
-            <div class="grid">
-              <article class="card">
-                <a href="tuotesivu.html" class="cover"
-                  ><img src="img/69f99f39474974b13826f877_hildur.jpg" alt="Hildur" loading="lazy" /><span
-                    class="pips"
-                    title="Erinomainen (K4)"
-                    ><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i
-                    ><b>K4</b></span
-                  ></a
-                >
-                <span class="author">Rämö, Satu</span><a href="tuotesivu.html" class="title">Hildur</a>
-                <span class="meta">Nidottu · Erinomainen</span>
-                <div class="buy">
-                  <span class="price">7,00 €</span
-                  ><button class="icon-btn" aria-label="Lisää ostoskoriin">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M3 4h2l2.2 11h11l2-8H6.3"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linejoin="round"
-                      />
-                      <circle cx="9" cy="19.5" r="1.5" fill="currentColor" />
-                      <circle cx="17" cy="19.5" r="1.5" fill="currentColor" />
-                    </svg>
-                  </button>
-                </div>
-              </article>
-              <article class="card">
-                <a href="tuotesivu.html" class="cover"
-                  ><img src="img/6abe27dc9da0c38a96ad75d0_rosa-ja-bjork.jpg" alt="Rosa ja Björk" loading="lazy" /><span
-                    class="pips"
-                    title="Erinomainen (K4)"
-                    ><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i
-                    ><b>K4</b></span
-                  ></a
-                >
-                <span class="author">Rämö, Satu</span><a href="tuotesivu.html" class="title">Rosa ja Björk</a>
-                <span class="meta">Nidottu · Erinomainen</span>
-                <div class="buy">
-                  <span class="price">6,00 €</span
-                  ><button class="icon-btn" aria-label="Lisää ostoskoriin">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M3 4h2l2.2 11h11l2-8H6.3"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linejoin="round"
-                      />
-                      <circle cx="9" cy="19.5" r="1.5" fill="currentColor" />
-                      <circle cx="17" cy="19.5" r="1.5" fill="currentColor" />
-                    </svg>
-                  </button>
-                </div>
-              </article>
-              <article class="card">
-                <a href="tuotesivu.html" class="cover"
-                  ><img src="img/6a5b403c0d8cd86636a6e44d_jakob.jpg" alt="Jakob" loading="lazy" /><span
-                    class="pips"
-                    title="Erinomainen (K4)"
-                    ><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i
-                    ><b>K4</b></span
-                  ></a
-                >
-                <span class="author">Rämö, Satu</span><a href="tuotesivu.html" class="title">Jakob</a>
-                <span class="meta">Pokkari · Erinomainen</span>
-                <div class="buy">
-                  <span class="price">7,00 €</span
-                  ><button class="icon-btn" aria-label="Lisää ostoskoriin">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M3 4h2l2.2 11h11l2-8H6.3"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linejoin="round"
-                      />
-                      <circle cx="9" cy="19.5" r="1.5" fill="currentColor" />
-                      <circle cx="17" cy="19.5" r="1.5" fill="currentColor" />
-                    </svg>
-                  </button>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer class="site">
-      <div class="wrap">
-        <div class="cols">
-          <div>
-            <a href="#" class="logo" aria-label="Kummisetä etusivu"
-              ><img
-                src="logo/kummiseta-logo-valkoinen.svg"
-                alt="Kummisetä - Divari &amp; Antikvariaatti"
-                width="230"
-                height="64"
-            /></a>
-            <p style="margin: 16px 0 0; opacity: 0.85">
-              Uudenmaankatu 26, 00120 Helsinki<br />Puh. 09 3540 1722<br />kummiseta1@wmail.fi
-            </p>
-          </div>
-          <div>
-            <h4>Kauppa</h4>
-            <ul>
-              <li><a href="tuotelistaus.html">Kaunokirjallisuus</a></li>
-              <li><a href="tuotelistaus.html">Scifi &amp; fantasia</a></li>
-              <li><a href="tuotelistaus.html">Historia</a></li>
-              <li><a href="tuotelistaus.html">Filosofia</a></li>
-              <li><a href="tuotelistaus.html">Psykologia</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Asiakaspalvelu</h4>
-            <ul>
-              <li><a href="#">Toimitus ja maksu</a></li>
-              <li><a href="#">Kuntoluokitus</a></li>
-              <li><a href="#">Palautukset</a></li>
-              <li><a href="#">Yhteystiedot</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Kummisetä</h4>
-            <ul>
-              <li><a href="#">Myy meille kirjasi</a></li>
-              <li><a href="#">Tietoa meistä</a></li>
-              <li><a href="#">Toimitusehdot</a></li>
-              <li><a href="#">Tietosuoja</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="legal">
-          <span>© Divari &amp; Antikvariaatti Kummisetä Oy · Y-tunnus 2438479-0</span
-          ><span>Verkkomaksu · Visma Pay</span>
-        </div>
-      </div>
-    </footer>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hakutulos - Kummisetä</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/kummiseta.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#6b2318">
+</head>
+<body>
+<div class="utility"><div class="wrap"><div class="usp"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h11v10H2zM13 10h4l3 3v3h-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="6" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg> <b>Ilmainen toimitus</b>&nbsp;yli 75 € tilauksiin</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v10h16V10M3 5h18l-1 5H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg> Nouto liikkeestä, Uudenmaankatu 26</span><span>★ 4,8/5 · 293 asiakaspalautetta</span></div><div class="links"><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Yhteystiedot</a><a href="#">Ota yhteyttä</a><a href="#" class="sell-link">Tarjoa kirjoja myytäväksi</a></div></div></div>
+<header class="site"><div class="wrap hbar">
+ <a href="etusivu.html" class="logo" aria-label="Kummisetä etusivu"><img src="logo/kummiseta-logo-musta.svg" alt="Kummisetä - Divari &amp; Antikvariaatti" width="230" height="64"></a>
+ <form class="search" role="search" onsubmit="return false"><input placeholder="Hae kirjailijaa, teosta tai ISBN:ää" aria-label="Haku"><button aria-label="Hae"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></form>
+ <div class="hicons"><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-8.6-9C2.3 7.6 4.6 5 7.5 5c1.9 0 3.4 1 4.5 2.6C13.1 6 14.6 5 16.5 5c2.9 0 5.2 2.6 4.1 6-1.6 4.6-8.6 9-8.6 9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><small>Suosikit</small></a><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><small>Tili</small></a><a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11h11l2-8H6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="9" cy="19.5" r="1.5" fill="currentColor"/><circle cx="17" cy="19.5" r="1.5" fill="currentColor"/></svg><small>Kori</small><span class="badge-n">2</span></a><a href="#" class="menu-btn" aria-label="Valikko"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a></div>
+</div></header>
+<nav class="nav"><div class="wrap"><a href="tuotelistaus.html" class=on>Kaunokirjallisuus</a><a href="tuotelistaus.html">Scifi &amp; fantasia</a><a href="tuotelistaus.html">Historia</a><a href="tuotelistaus.html">Filosofia</a><a href="tuotelistaus.html">Psykologia</a><a href="tuotelistaus.html" class="all">Kaikki kategoriat</a><a href="#" class="news"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:22px;height:22px"><path d="M3 6h18v12H3z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Tilaa uutiskirje</a></div></nav>
+<main>
+<div class="wrap">
+ <div class="crumbs"><a href="etusivu.html">Etusivu</a> / Haku</div>
+ <div class="lhead"><div><h1>Hakutulokset: <em style="font-style:italic;color:var(--brand)">rämö</em></h1><p>3 nimikettä</p></div><button class="btn ghost sm filter-btn">Suodata (2)</button></div>
+ <div class="searchtip">Haku kohdistuu tekijään, teoksen nimeen ja ISBN:ään. Kokeile myös <a href="#">Rämö Satu</a> tai selaa <a href="tuotelistaus.html">Kaunokirjallisuus</a>.</div>
+ <div class="listing">
+  <aside class="filters">
+   <div class="active"><span>rämö ×</span><a href="#">Tyhjennä</a></div>
+   <fieldset class="cats-f"><legend>Alakategoria <span class="legend-n">(16)</span></legend><div class="facet-search"><input placeholder="Etsi alakategoriaa…" aria-label="Etsi alakategoriaa"></div><label><input type="checkbox"> Kotimainen<small>520</small></label><label><input type="checkbox"> Käännöskirjallisuus<small>410</small></label><label><input type="checkbox"> Dekkarit<small>160</small></label><label><input type="checkbox"> Klassikot<small>95</small></label><label><input type="checkbox"> Novellit<small>70</small></label><label><input type="checkbox"> Runot<small>50</small></label><label class=more-item><input type="checkbox"> Nuortenkirjat<small>44</small></label><label class=more-item><input type="checkbox"> Satukirjat<small>38</small></label><label class=more-item><input type="checkbox"> Draama<small>30</small></label><label class=more-item><input type="checkbox"> Esseet<small>28</small></label><label class=more-item><input type="checkbox"> Sotakirjat<small>26</small></label><label class=more-item><input type="checkbox"> Huumori<small>22</small></label><label class=more-item><input type="checkbox"> Antologiat<small>19</small></label><label class=more-item><input type="checkbox"> Sarjakuvaromaanit<small>17</small></label><label class=more-item><input type="checkbox"> Kirjeet ja päiväkirjat<small>14</small></label><label class=more-item><input type="checkbox"> Erotiikka<small>12</small></label><a href="#" class="more-link">Näytä kaikki 16 alakategoriaa</a></fieldset>
+   <fieldset><legend>Kunto</legend><label><input type="checkbox" checked> <span class="pips" title="Uudenveroinen (K5-)"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span> Uudenveroinen<small>120</small></label><label><input type="checkbox" checked> <span class="pips" title="Erinomainen (K4)"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span> Erinomainen<small>680</small></label><label><input type="checkbox"> <span class="pips" title="Hyvä (K3)"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span> Hyvä<small>400</small></label></fieldset>
+   <fieldset><legend>Sidosasu</legend><label><input type="checkbox"> Sidottu<small>590</small></label><label><input type="checkbox"> Nidottu<small>310</small></label><label><input type="checkbox" checked> Pokkari<small>340</small></label></fieldset>
+   <fieldset><legend>Hinta</legend><div class="slider" aria-hidden="true"><div class="track"></div><div class="fill" style="left:0;right:50%"></div><div class="knob" style="left:0"></div><div class="knob" style="left:50%"></div></div><div class="range"><input value="0" aria-label="Alin hinta"> – <input value="50" aria-label="Ylin hinta"> <span class="unit">€</span></div></fieldset>
+   <fieldset><legend>Painovuosi</legend><div class="slider" aria-hidden="true"><div class="track"></div><div class="fill" style="left:28%;right:12%"></div><div class="knob" style="left:28%"></div><div class="knob" style="left:88%"></div></div><div class="range"><input value="1950" aria-label="Painovuosi alkaen"> – <input value="2015" aria-label="Painovuosi asti"></div></fieldset>
+   <fieldset><legend>Kieli</legend><label><input type="checkbox"> suomi<small>1100</small></label><label><input type="checkbox"> ruotsi<small>60</small></label><label><input type="checkbox"> englanti<small>80</small></label></fieldset>
+  </aside>
+  <div>
+   <div class="applied"><span class="lbl">Haku:</span><a href="#" class="chip"><b>Hakusana:</b> rämö <span class="x" aria-label="Poista">×</span></a><a href="#" class="chip"><b>Kunto:</b> Erinomainen tai parempi <span class="x" aria-label="Poista">×</span></a><a href="#" class="clear">Poista kaikki suodattimet</a></div>
+   <div class="toolbar"><span>Näytetään 1–12 / 3</span><label>Järjestä <select><option>Uusimmat ensin</option><option>Hinta: halvin ensin</option><option>Hinta: kallein ensin</option><option>Tekijän mukaan</option><option>Painovuosi</option></select></label></div>
+   <div class="grid"><article class="card"><a href="tuotesivu.html" class="cover"><img src="img/69f99f39474974b13826f877_hildur.jpg" alt="Hildur" loading="lazy"><span class="pips" title="Erinomainen (K4)"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><b>K4</b></span></a>
+<span class="author">Rämö, Satu</span><a href="tuotesivu.html" class="title">Hildur</a>
+<span class="meta">Nidottu · Erinomainen<span class="copies-n">4 kappaletta · 7–24 €</span>
+<div class="buy"><span class="price">7,00 €</span><button class="icon-btn" aria-label="Lisää ostoskoriin"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11h11l2-8H6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="9" cy="19.5" r="1.5" fill="currentColor"/><circle cx="17" cy="19.5" r="1.5" fill="currentColor"/></svg></button></div></article><article class="card"><a href="tuotesivu.html" class="cover"><img src="img/6abe27dc9da0c38a96ad75d0_rosa-ja-bjork.jpg" alt="Rosa ja Björk" loading="lazy"><span class="pips" title="Erinomainen (K4)"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><b>K4</b></span></a>
+<span class="author">Rämö, Satu</span><a href="tuotesivu.html" class="title">Rosa ja Björk</a>
+<span class="meta">Nidottu · Erinomainen</span>
+<div class="buy"><span class="price">6,00 €</span><button class="icon-btn" aria-label="Lisää ostoskoriin"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11h11l2-8H6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="9" cy="19.5" r="1.5" fill="currentColor"/><circle cx="17" cy="19.5" r="1.5" fill="currentColor"/></svg></button></div></article><article class="card"><a href="tuotesivu.html" class="cover"><img src="img/6a5b403c0d8cd86636a6e44d_jakob.jpg" alt="Jakob" loading="lazy"><span class="pips" title="Erinomainen (K4)"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><b>K4</b></span></a>
+<span class="author">Rämö, Satu</span><a href="tuotesivu.html" class="title">Jakob</a>
+<span class="meta">Pokkari · Erinomainen</span>
+<div class="buy"><span class="price">7,00 €</span><button class="icon-btn" aria-label="Lisää ostoskoriin"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11h11l2-8H6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="9" cy="19.5" r="1.5" fill="currentColor"/><circle cx="17" cy="19.5" r="1.5" fill="currentColor"/></svg></button></div></article></div>
+   
+  </div>
+ </div>
+</div><section class="block" style="padding-top:0"><div class="wrap"><div class="sec-head"><h2>Kummisetä suosittelee</h2><a href="tuotelistaus.html">Kaikki suositukset</a></div><div class="picks"><div class="pick"><a href="tuotesivu.html"><img src="img/692584a3cafa264d5629a560_lokki-vanja-eno-kolme-sisarta-kirsikkatarha.jpg" alt="Lokki ; Vanja-eno ; Kolme sisarta ; Kirsikkatarha" loading="lazy"></a><div><span class="author">Tšehov, Anton</span><a href="tuotesivu.html" class="title">Lokki ; Vanja-eno ; Kolme sisarta ; Kirsikkatarha</a><p class="say">Neljä näytelmää yksissä kansissa, Otavan klassikkosarjan painos. Tätä kysytään meiltä joka syksy, nyt sattui hyväkuntoinen hyllyyn.<small>Mikko, Kummisetä</small></p><div class="buy"><span class="price">10,00 €</span><a href="tuotesivu.html" class="btn ghost sm">Katso kirja</a></div></div></div><div class="pick"><a href="tuotesivu.html"><img src="img/md_002aeaa6df7e793858e52018.jpg" alt="Kuin surmaisi satakielen" loading="lazy"></a><div><span class="author">Lee, Harper</span><a href="tuotesivu.html" class="title">Kuin surmaisi satakielen</a><p class="say">Yksi niistä kirjoista, jonka voi lukea uudestaan kymmenen vuoden välein ja löytää aina uutta. Pokkari, kelpaa mukaan junaan.<small>Mikko, Kummisetä</small></p><div class="buy"><span class="price">8,00 €</span><a href="tuotesivu.html" class="btn ghost sm">Katso kirja</a></div></div></div><div class="pick"><a href="tuotesivu.html"><img src="img/md_0029b3aadf7e793858e3ed0b.jpg" alt="Ihmisyys – 1900-luvun moraalihistoria" loading="lazy"></a><div><span class="author">Glover, Jonathan</span><a href="tuotesivu.html" class="title">Ihmisyys – 1900-luvun moraalihistoria</a><p class="say">Raskas aihe, mutta harvinaisen selkeästi kirjoitettu. Loppuunmyyty kustantajalta, meillä tarjouksessa.<small>Mikko, Kummisetä</small></p><div class="buy"><span class="price">10,00 €</span><a href="tuotesivu.html" class="btn ghost sm">Katso kirja</a></div></div></div></div></div></section>
+
+</main><footer class="site"><div class="wrap">
+ <div class="cols">
+  <div><a href="#" class="logo" aria-label="Kummisetä etusivu"><img src="logo/kummiseta-logo-valkoinen.svg" alt="Kummisetä - Divari &amp; Antikvariaatti" width="230" height="64"></a><p style="margin:16px 0 0;opacity:.85">Uudenmaankatu 26, 00120 Helsinki<br>Puh. 09 3540 1722<br>kummiseta1@wmail.fi</p></div>
+  <div><h4>Kauppa</h4><ul><li><a href="tuotelistaus.html">Kaunokirjallisuus</a></li><li><a href="tuotelistaus.html">Scifi &amp; fantasia</a></li><li><a href="tuotelistaus.html">Historia</a></li><li><a href="tuotelistaus.html">Filosofia</a></li><li><a href="tuotelistaus.html">Psykologia</a></li></ul></div>
+  <div><h4>Asiakaspalvelu</h4><ul><li><a href="#">Toimitus ja maksu</a></li><li><a href="#">Kuntoluokitus</a></li><li><a href="#">Palautukset</a></li><li><a href="#">Yhteystiedot</a></li></ul></div>
+  <div><h4>Kummisetä</h4><ul><li><a href="#">Myy meille kirjasi</a></li><li><a href="#">Tietoa meistä</a></li><li><a href="#">Toimitusehdot</a></li><li><a href="#">Tietosuoja</a></li></ul></div>
+ </div>
+ <div class="legal"><span>© Divari &amp; Antikvariaatti Kummisetä Oy · Y-tunnus 2438479-0</span><span>Verkkomaksu · Visma Pay</span></div>
+</div></footer>
+</body>
 </html>
