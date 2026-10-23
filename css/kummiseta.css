@@ -1,0 +1,1479 @@
+/* Kummisetä - verkkokaupan tyylit
+   Divari & Antikvariaatti Kummisetä Oy
+   Suunnittelu: JH Analytics, 10/2026
+
+   Rakenne: muuttujat -> perus -> header/nav -> etusivu -> komponentit -> tuotesivu -> footer
+   -> responsiivisuus -> A02-tarkennukset -> tuotelistaus. Tarkennukset on lisätty kerroksena
+   perussääntöjen päälle, joten sama valitsin voi esiintyä kahdesti; jälkimmäinen voittaa.
+   Värit ja fontit vaihdetaan :root-muuttujista. */
+/* ==========================================================
+   MUUTTUJAT - värit, fontit, pyöristykset. Koko ulkoasu säädetään täältä.
+   ========================================================== */
+:root {
+  --paper: #fbf8f3;
+  --surface: #fff;
+  --ink: #2a1d18;
+  --muted: #6f625a;
+  --brand: #6b2318;
+  --brand-ink: #fff;
+  --brand-dark: #4a170f;
+  --accent: #e8b931;
+  --accent-ink: #2a1d18;
+  --line: #e7dfd4;
+  --tint: #f4ede3;
+  --price: #6b2318;
+  --f-head: "Crimson Pro", Georgia, serif;
+  --f-body: "Source Sans 3", system-ui, sans-serif;
+  --f-word: "Crimson Pro", Georgia, serif;
+  --radius: 4px;
+  --radius-btn: 3px;
+  --head-weight: 600;
+  --head-case: none;
+  --head-track: -0.01em;
+  --head-stretch: normal;
+}
+
+
+/* ==========================================================
+   PERUS - nollaukset, typografia, wrap-leveys
+   ========================================================== */
+* {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.55 var(--f-body);
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+svg {
+  width: 1.25em;
+  height: 1.25em;
+  flex: none;
+}
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--f-head);
+  font-weight: var(--head-weight);
+  text-transform: var(--head-case);
+  letter-spacing: var(--head-track);
+  font-stretch: var(--head-stretch);
+  line-height: 1.08;
+  margin: 0;
+}
+
+
+/* ==========================================================
+   YLÄPALKKI (utility) - toimitusinfo, yhteystiedot, Tarjoa kirjoja -painike
+   ========================================================== */
+.utility {
+  font-size: 14px;
+  padding: 7px 0;
+}
+.utility .wrap {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.utility span {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.utility .wrap {
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+.utility .usp {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  gap: 28px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.utility .links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-left: auto;
+}
+.utility .links a {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+}
+.utility .links a:hover {
+  border-bottom-color: currentColor;
+}
+.utility .links a.sell-link {
+  background: rgba(255, 255, 255, 0.14);
+  padding: 3px 10px;
+  border-radius: var(--radius-btn);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+@media (max-width: 1320px) {
+  .utility .usp span:nth-child(3) {
+    display: none;
+  }
+}
+
+/* ==========================================================
+   HEADER - logo, haku, kuvakkeet
+   ========================================================== */
+header.site {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.hbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 32px;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  color: var(--ink);
+}
+.logo svg,
+.logo img {
+  width: 230px;
+  height: auto;
+}
+.on-dark .logo {
+  color: #fff;
+}
+.logo .hat {
+  width: 58px;
+  height: 36px;
+  color: var(--brand);
+}
+.logo .word {
+  font-family: var(--f-word);
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.logo .word-sub {
+  display: block;
+  font-family: var(--f-body);
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.search {
+  display: flex;
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-btn);
+  overflow: hidden;
+  background: #fff;
+  max-width: 620px;
+  width: 100%;
+  justify-self: center;
+}
+.search input {
+  flex: 1;
+  border: 0;
+  padding: 11px 18px;
+  font: inherit;
+  font-size: 16px;
+  background: transparent;
+  min-width: 0;
+}
+.search input:focus {
+  outline: none;
+}
+.search button {
+  border: 0;
+  background: var(--brand);
+  color: var(--brand-ink);
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.hicons {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  font-size: 14px;
+}
+.hicons a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  position: relative;
+}
+.hicons svg {
+  width: 24px;
+  height: 24px;
+}
+.badge-n {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 99px;
+  min-width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  padding: 0 4px;
+}
+.hicons .menu-btn {
+  display: none;
+}
+
+/* ==========================================================
+   PÄÄNAVIGAATIO
+   ========================================================== */
+.nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav a {
+  padding: 13px 14px;
+  font-weight: 600;
+  font-size: 16px;
+  white-space: nowrap;
+  border-radius: 2px;
+}
+.nav .more {
+  margin-left: auto;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+/* ==========================================================
+   ETUSIVU: HERO (liikekuva-versio; kampanjaversio alempana A02-kohdassa)
+   ========================================================== */
+.hero {
+  padding: 44px 0 48px;
+}
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+.overline {
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 14px;
+  font-weight: 600;
+}
+.hero h1 {
+  font-size: clamp(30px, 3.4vw, 44px);
+  margin-bottom: 16px;
+  max-width: 16em;
+}
+.hero .lead {
+  font-size: 18px;
+  max-width: 34em;
+  color: var(--muted);
+  margin: 0 0 24px;
+}
+.hero .ctas {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.textlink {
+  font-weight: 600;
+  border-bottom: 1.5px solid currentColor;
+}
+.photo {
+  margin: 0;
+  max-width: 420px;
+  justify-self: end;
+}
+.photo img {
+  border-radius: var(--radius);
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: 50% 40%;
+}
+.photo figcaption {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  border-top: 1px solid var(--line);
+  padding-top: 40px;
+}
+.info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.info p {
+  margin: 0 0 14px;
+  max-width: 46ch;
+}
+.info .small {
+  font-size: 14px;
+  color: var(--muted);
+}
+.hours {
+  display: grid;
+  gap: 4px;
+  margin: 0 0 14px;
+  max-width: 220px;
+}
+.hours div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted var(--line);
+  padding: 3px 0;
+}
+.hours dt {
+  color: var(--muted);
+}
+.hours dd {
+  margin: 0;
+  font-weight: 600;
+}
+.shelf {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 14px;
+  height: 100%;
+  min-height: 300px;
+}
+.shelf img {
+  width: 118px;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.18),
+    0 1px 0 rgba(0, 0, 0, 0.2);
+  background: #ddd;
+}
+.shelf img:nth-child(1) {
+  transform: rotate(-4deg) translateY(-6px);
+}
+.shelf img:nth-child(2) {
+  width: 140px;
+  transform: translateY(-22px);
+}
+.shelf img:nth-child(3) {
+  transform: rotate(3deg);
+}
+.shelf img:nth-child(4) {
+  width: 128px;
+  transform: rotate(-2deg) translateY(-12px);
+}
+
+/* ==========================================================
+   PAINIKKEET
+   ========================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font: 600 16px/1 var(--f-body);
+  padding: 14px 24px;
+  border-radius: var(--radius-btn);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.btn.primary {
+  background: var(--brand);
+  color: var(--brand-ink);
+}
+.btn.primary:hover {
+  background: var(--brand-dark);
+}
+.btn.ghost {
+  border-color: currentColor;
+  background: transparent;
+}
+.btn.secondary {
+  background: #fff;
+  color: var(--brand);
+  border-color: #fff;
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.12);
+}
+.btn.accent {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.btn.sm {
+  padding: 10px 14px;
+  font-size: 14px;
+}
+section.block {
+  padding: 56px 0;
+}
+
+/* ==========================================================
+   ETUSIVU: SISÄLTÖLOHKOT - otsikot, kategoriaruudukko
+   ========================================================== */
+.sec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.sec-head h2 {
+  font-size: clamp(26px, 3vw, 36px);
+}
+.sec-head a {
+  font-weight: 600;
+  border-bottom: 1.5px solid currentColor;
+  white-space: nowrap;
+  font-size: 15px;
+}
+.cats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+.cat {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: 0.15s;
+}
+.cat:hover {
+  border-color: var(--ink);
+}
+.cat {
+  min-width: 0;
+}
+.cat h3 {
+  font-size: 21px;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+.cat small {
+  color: var(--muted);
+  font-size: 14px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px 18px;
+}
+
+/* ==========================================================
+   TUOTEKORTTI - listaukset ja nostot
+   ========================================================== */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.card .cover {
+  background: var(--tint);
+  border-radius: var(--radius);
+  position: relative;
+  padding-top: 133%;
+  margin-bottom: 6px;
+  overflow: hidden;
+}
+.card .cover img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-height: calc(100% - 28px);
+  max-width: calc(100% - 28px);
+  width: auto;
+  height: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.card .author {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.card .title {
+  font-size: 17px;
+  line-height: 1.25;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card .meta {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--muted);
+  flex-wrap: wrap;
+}
+.card .buy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 6px;
+}
+.price {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--price);
+}
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-btn);
+  display: grid;
+  place-items: center;
+  background: var(--brand);
+  color: var(--brand-ink);
+  border: 0;
+  cursor: pointer;
+}
+
+/* ==========================================================
+   KUNTOLUOKITUS - .cond tekstimerkintä, .pips pallerot (A02-osiossa)
+   ========================================================== */
+.cond {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 2px 7px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* ==========================================================
+   OSTAMME KIRJOJA -NOSTO
+   ========================================================== */
+.sell {
+  border-radius: var(--radius);
+  padding: 36px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.sell h2 {
+  font-size: 30px;
+  margin-bottom: 6px;
+}
+.sell p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+
+/* ==========================================================
+   TUOTESIVU - murupolku, kuvat, ostolaatikko, kuvaus
+   ========================================================== */
+.crumbs {
+  font-size: 14px;
+  color: var(--muted);
+  padding: 22px 0;
+}
+.crumbs a {
+  text-decoration: underline;
+}
+.pp {
+  display: grid;
+  grid-template-columns: minmax(260px, 380px) 1fr;
+  gap: 48px;
+  padding-bottom: 40px;
+}
+.pp-img {
+  background: var(--tint);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: grid;
+  place-items: center;
+  align-self: start;
+}
+.pp-img img {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+.pp-thumbs {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.pp-thumbs span {
+  width: 56px;
+  height: 72px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--surface);
+}
+.pp-thumbs span.on {
+  border: 2px solid var(--ink);
+}
+.pp-author {
+  font-size: 17px;
+  color: var(--muted);
+}
+.pp-author a {
+  text-decoration: underline;
+}
+.pp-title {
+  font-size: clamp(32px, 3.6vw, 46px);
+  margin: 4px 0 10px;
+}
+.pp-sub {
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+.ticket {
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  display: grid;
+  gap: 14px;
+  max-width: 560px;
+}
+.ticket .row1 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.ticket .price {
+  font-size: 32px;
+}
+.ticket .only {
+  font-size: 14px;
+  color: var(--muted);
+}
+.ticket .row2 {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.ticket .row2 .btn.primary {
+  flex: 1;
+  min-width: 200px;
+}
+.ticket ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+  font-size: 15px;
+}
+.ticket li {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.condline {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 15px;
+}
+.spec {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 40px;
+  margin: 28px 0 0;
+  max-width: 720px;
+  font-size: 15.5px;
+}
+.spec div {
+  display: flex;
+  align-items: baseline;
+  padding: 5px 0;
+}
+.spec dt {
+  display: flex;
+  flex: 1;
+  color: var(--muted);
+}
+.spec dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+}
+.desc {
+  max-width: 62ch;
+  margin-top: 26px;
+}
+.desc h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.desc p {
+  margin: 0 0 10px;
+}
+
+/* ==========================================================
+   TYYLIOPAS (tyyliopas.html) - värit, typografia, painikkeet
+   ========================================================== */
+.tile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.panel h3 {
+  font-size: 14px;
+  font-family: var(--f-body);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-stretch: normal;
+}
+.sw {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.sw div {
+  border-radius: var(--radius);
+  height: 84px;
+  padding: 8px;
+  font:
+    12px/1.3 ui-monospace,
+    Menlo,
+    monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.typo p {
+  margin: 0 0 12px;
+}
+.row-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+footer.site {
+  background: var(--brand-dark);
+  color: #e9e2dc;
+  margin-top: 56px;
+  padding: 48px 0 28px;
+  font-size: 15px;
+}
+footer .cols {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 32px;
+}
+footer h4 {
+  font: 700 13px/1 var(--f-body);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 14px;
+  color: #fff;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 7px;
+}
+footer .logo {
+  color: #fff;
+}
+footer .logo svg {
+  width: 220px;
+  max-width: 100%;
+}
+footer .logo .hat {
+  color: var(--accent);
+}
+footer .logo .word-sub {
+  color: #cfc4bb;
+}
+footer .legal {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 36px;
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+/* ==========================================================
+   RESPONSIIVISUUS - perussäännöt (tabletti ja mobiili)
+   ========================================================== */
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .cats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 760px) {
+  body {
+    font-size: 16px;
+  }
+  .utility .wrap {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .utility span:nth-child(n + 2) {
+    display: none;
+  }
+  .utility .wrap {
+    justify-content: space-between;
+  }
+  .utility .usp span:nth-child(n + 2) {
+    display: none;
+  }
+  .utility .links a:not(.sell-link) {
+    display: none;
+  }
+  .utility .links a.sell-link {
+    padding: 2px 8px;
+    font-size: 13px;
+  }
+  .hbar {
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    padding-top: 10px;
+    padding-bottom: 12px;
+  }
+  .hicons .menu-btn {
+    display: flex;
+  }
+  .hicons .menu-btn svg {
+    width: 30px;
+    height: 30px;
+  }
+  .logo svg,
+  .logo img {
+    width: 150px;
+  }
+  .search {
+    grid-column: 1/-1;
+    grid-row: 2;
+  }
+  .hicons {
+    gap: 14px;
+    justify-self: end;
+  }
+  .hicons small {
+    display: none;
+  }
+  .nav .more {
+    display: none;
+  }
+  .hero {
+    padding: 28px 0 32px;
+  }
+  .hero .wrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .photo {
+    max-width: 100%;
+    justify-self: stretch;
+  }
+  .photo img {
+    aspect-ratio: 4/3;
+  }
+  .info {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  section.block {
+    padding: 36px 0;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px 14px;
+  }
+  .pp {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .pp-img {
+    padding: 20px;
+  }
+  .pp-img img {
+    max-height: 340px;
+  }
+  .spec {
+    grid-template-columns: 1fr;
+  }
+  .tile {
+    grid-template-columns: 1fr;
+  }
+  .sw {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sell {
+    padding: 26px 22px;
+  }
+  footer .cols {
+    grid-template-columns: 1fr 1fr;
+  }
+  footer .cols > * {
+    min-width: 0;
+  }
+  footer .cols > :first-child {
+    grid-column: 1/-1;
+  }
+}
+
+
+/* ==========================================================
+   A02-TARKENNUKSET - nämä säännöt tulevat perussääntöjen jälkeen ja ohittavat ne: kampanjahero, pallerot, kortin hinta- ja kuntomerkinnät, mobiilinavigaatio
+   ========================================================== */
+.hero {
+  background: var(--tint);
+}
+
+.card .title {
+  font-family: var(--f-head);
+  font-weight: 600;
+}
+.spec dt::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px dotted var(--line);
+  margin: 0 0.5rem 0.3rem;
+}
+.utility {
+  background: var(--brand);
+  color: #f6e9dc;
+}
+.nav a:hover,
+.nav a.on {
+  color: var(--brand);
+  box-shadow: inset 0 -2px 0 var(--brand);
+}
+.sell {
+  background: var(--brand);
+  color: #fff;
+}
+.sell .btn {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.ticket {
+  background: #fff;
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--tint);
+}
+
+/* A02 */
+.btn {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.btn.primary {
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.25);
+}
+.icon-btn {
+  border-radius: 3px;
+}
+.search {
+  border-width: 2px;
+}
+.nav .wrap {
+  align-items: center;
+}
+.nav .news {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--brand);
+  font-weight: 600;
+}
+.nav .all {
+  color: var(--muted);
+  font-weight: 500;
+}
+.nav .news {
+  padding-right: 0;
+}
+.hicons a:last-of-type {
+  margin-right: 0;
+}
+.hicons .badge-n {
+  right: -6px;
+}
+
+/* kunto-pisteet */
+.pips {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+  padding: 4px 7px;
+  border-radius: 3px;
+  background: #fff;
+  border: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+}
+.pips i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line);
+  display: block;
+}
+.pips i.on {
+  background: var(--brand);
+}
+.pips b {
+  margin-left: 4px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.card .cover .pips {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+.card .cover .sale {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 3px 7px;
+  border-radius: 3px;
+}
+.old {
+  color: var(--muted);
+  text-decoration: line-through;
+  font-weight: 400;
+  font-size: 14px;
+  margin-left: 6px;
+}
+.price.sale-p {
+  color: #b3261e;
+}
+/* hero kampanja */
+.hero.campaign {
+  background: var(--brand);
+  color: #fff;
+  padding: 36px 0 40px;
+}
+.hero .wrap {
+  overflow: hidden;
+}
+.hero.campaign .overline {
+  color: var(--accent);
+}
+.hero.campaign .lead {
+  color: #f1e4da;
+}
+.hero.campaign .btn.primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.18);
+}
+.hero.campaign .textlink {
+  color: #fff;
+}
+.hero.campaign .wrap {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+.stack {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 14px;
+  justify-self: end;
+}
+.stack img {
+  width: 150px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+  border-radius: 2px;
+}
+.stack img:nth-child(2) {
+  width: 180px;
+  margin-bottom: 12px;
+}
+
+/* ==========================================================
+   RESPONSIIVISUUS - A02-tarkennukset
+   ========================================================== */
+@media (max-width: 1100px) and (min-width: 761px) {
+  .hero .wrap {
+    gap: 32px;
+  }
+  .stack {
+    gap: 10px;
+    min-width: 0;
+  }
+  .stack img {
+    width: 26%;
+  }
+  .stack img:nth-child(2) {
+    width: 32%;
+  }
+  .shelf {
+    gap: 10px;
+    min-height: 240px;
+  }
+  .shelf img {
+    width: 19%;
+  }
+  .shelf img:nth-child(2) {
+    width: 23%;
+  }
+  .shelf img:nth-child(4) {
+    width: 21%;
+  }
+}
+
+/* info-osio kuvalla */
+.info {
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: start;
+}
+.info .photo {
+  max-width: 100%;
+  justify-self: stretch;
+}
+.info .photo img {
+  aspect-ratio: 4/3;
+}
+/* mobiilikategoriat */
+.mob-cats {
+  display: none;
+}
+/* kunto ja huomiot */
+.notes {
+  max-width: 560px;
+  margin: 22px 0 0;
+  border-left: 3px solid var(--brand);
+  padding: 2px 0 2px 16px;
+}
+.notes h3 {
+  font-size: 14px;
+  font-family: var(--f-body);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.notes p {
+  margin: 0;
+}
+.condrow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 15px;
+}
+/* listaus */
+
+/* ==========================================================
+   TUOTELISTAUS JA HAKUTULOS - otsikko, sivupalkin suodattimet, järjestys, sivutus
+   ========================================================== */
+.lhead {
+  padding: 8px 0 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.lhead h1 {
+  font-size: clamp(30px, 3.4vw, 42px);
+}
+.lhead p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+.listing {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+  padding-bottom: 50px;
+}
+.filters {
+  font-size: 15px;
+}
+.filters fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 22px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  min-width: 0;
+  display: block;
+}
+.filters legend {
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0;
+  margin: 0 0 10px;
+  display: block;
+  width: 100%;
+}
+.filters label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 3px 0;
+  cursor: pointer;
+}
+.filters label small {
+  margin-left: auto;
+  color: var(--muted);
+}
+.filters input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--brand);
+}
+.filters .range {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.filters .range input {
+  width: 70px;
+  padding: 7px 8px;
+  border: 1.5px solid var(--line);
+  border-radius: 3px;
+  font: inherit;
+  font-size: 14px;
+}
+.filters .active {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.filters .active span {
+  background: var(--tint);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 3px 8px;
+  font-size: 13px;
+}
+.filters .active a {
+  color: var(--brand);
+  text-decoration: underline;
+  font-size: 13px;
+  align-self: center;
+}
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.toolbar select {
+  font: inherit;
+  font-size: 14px;
+  padding: 7px 36px 7px 12px;
+  border: 1.5px solid var(--line);
+  border-radius: 3px;
+  color: var(--ink);
+  -webkit-appearance: none;
+  appearance: none;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6' fill='none' stroke='%236b2318' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    no-repeat right 12px center/16px 16px;
+  cursor: pointer;
+}
+.toolbar select:focus {
+  outline: none;
+  border-color: var(--brand);
+}
+.filter-btn {
+  display: none;
+}
+.listing .grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+.pager {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 34px;
+}
+.pager a {
+  min-width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--line);
+  border-radius: 3px;
+  font-weight: 600;
+  padding: 0 8px;
+}
+.pager a.on {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+.searchtip {
+  background: var(--tint);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+.searchtip a {
+  text-decoration: underline;
+  color: var(--brand);
+}
+
+/* ==========================================================
+   RESPONSIIVISUUS - tuotelistaus
+   ========================================================== */
+@media (max-width: 1100px) {
+  .listing {
+    grid-template-columns: 200px 1fr;
+  }
+  .listing .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 760px) {
+  .nav {
+    display: none;
+  }
+  .mob-cats {
+    display: block;
+    padding: 22px 0 4px;
+  }
+  .mob-cats h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+  .mob-cats .wrap > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .mob-cats a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 12px;
+    border: 1.5px solid var(--line);
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 15px;
+    background: #fff;
+  }
+  .mob-cats a span {
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .mob-cats a.news {
+    grid-column: 1/-1;
+    color: var(--brand);
+    border-color: var(--brand);
+  }
+  .hero.campaign .wrap {
+    grid-template-columns: 1fr;
+  }
+  .stack {
+    justify-self: center;
+    order: -1;
+    gap: 8px;
+  }
+  .stack img {
+    width: 92px;
+  }
+  .stack img:nth-child(2) {
+    width: 110px;
+  }
+  .info {
+    grid-template-columns: 1fr;
+  }
+  .listing {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .filters {
+    display: none;
+  }
+  .filter-btn {
+    display: inline-flex;
+  }
+  .listing .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
