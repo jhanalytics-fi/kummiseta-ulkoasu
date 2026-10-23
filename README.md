@@ -1,12 +1,7 @@
 # Kummisetä - verkkokaupan ulkoasu
 
 Divari & Antikvariaatti Kummisetä Oy:n verkkokaupan asiakasnäkymän ulkoasu.
-Suunnittelu JH Analytics, 10/2026. Tekninen toteutus Ecwid headless -ratkaisuna
-(toteuttaja: Antti Kuuskoski).
-
-Paketti on staattista HTML:ää ja yhtä CSS-tiedostoa. Ei build-vaihetta, ei
-JavaScriptiä, ei riippuvuuksia Google Fontsia lukuun ottamatta. Sivut avautuvat
-suoraan selaimeen.
+Suunnittelu JH Analytics, 10/2026.
 
 ## Tiedostot
 
